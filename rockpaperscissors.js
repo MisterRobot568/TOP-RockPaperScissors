@@ -47,11 +47,6 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
-// const playerSelection = 'paper';
-// const computerSelection = getComputerChoice()
-// console.log("player selection: " + playerSelection)
-// console.log("computerSelection: " + computerSelection)
-// console.log(playRound(playerSelection, computerSelection))
 
 // 1 prompt user to give their input 
 // use playRound to compare user input to computer input
@@ -59,20 +54,37 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 
-    let playerScore = 0;
-    let compScore = 0;
+    const rock_btn = document.querySelector('#rock_btn');
+    const paper_btn = document.querySelector('#paper_btn');
+    const scissors_btn = document.querySelector('#scissors_btn');
 
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt("Choose: Rock, Paper, or scissors!")
-        let round = playRound(playerSelection, getComputerChoice())
-        if (round == 0) {
-            compScore++;
-        } else if (round == 1) {
-            playerScore++;
-        }
-    }
-    console.log("Final score: Player : " + playerScore + ", Computer : " + compScore)
+    rock_btn.addEventListener('click', () => {
+        alert("Rock!")
+    })
+    paper_btn.addEventListener('click', () => {
+        alert("Paper!")
+    })
+    scissors_btn.addEventListener('click', () => {
+        alert("Paper!")
+    })
+
+
+    // let playerScore = 0;
+    // let compScore = 0;
+
+    // for (let i = 0; i < 5; i++) {
+    //     let playerSelection = prompt("Choose: Rock, Paper, or scissors!")
+    //     let round = playRound(playerSelection, getComputerChoice())
+    //     if (round == 0) {
+    //         compScore++;
+    //     } else if (round == 1) {
+    //         playerScore++;
+    //     }
+    // }
+    // console.log("Final score: Player : " + playerScore + ", Computer : " + compScore)
 }
+
+// add event listener to the r/p/s buttons
 
 
 game();
