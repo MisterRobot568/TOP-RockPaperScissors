@@ -14,36 +14,36 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    const div = document.querySelector('.results')
 
+    const div = document.querySelector('.results')
     let playerSelectionLower = playerSelection.toLowerCase()
-    console.log("Player Chooses: " + playerSelection);
-    console.log("Computer Chooses: " + computerSelection);
+    // console.log("Player Chooses: " + playerSelection);
+    // console.log("Computer Chooses: " + computerSelection);
     if (playerSelectionLower === computerSelection) {
         div.textContent = ("It's a draw!");
         return 2;
     } else if (playerSelectionLower === "rock") {
         if (computerSelection === "paper") {
-            div.textContent = ("You lose! Paper beats Rock");
+            div.textContent = ("You lose! Austin beats Slime");
             return 0;
         } else {
-            div.textContent = ("You win! Rock beats Scissors");
+            div.textContent = ("You win! Slime beats Anya");
             return 1;
         }
     } else if (playerSelectionLower === "paper") {
         if (computerSelection === "scissors") {
-            div.textContent = ("You lose! Scissors beats paper")
+            div.textContent = ("You lose! Anya beats Austin")
             return 0;
         } else {
-            div.textContent = ("You win! Paper beats Rock")
+            div.textContent = ("You win! Austin beats Slime")
             return 1;
         }
     } else if (playerSelectionLower === "scissors") {
         if (computerSelection === "rock") {
-            div.textContent = ("You lose! Rock beats Scissors")
+            div.textContent = ("You lose! Slime beats Anya")
             return 0;
         } else {
-            div.textContent = ("You win! Scissors beats paper")
+            div.textContent = ("You win! Anya beats Austin")
             return 1;
         }
     }
@@ -53,13 +53,9 @@ function playRound(playerSelection, computerSelection) {
 // use playRound to compare user input to computer input
 // Add to score based on the outcome of playRound
 
-// function disableButtons() {
-//     buttons.forEach(elem => {
-//         elem.disabled = true
-//     })
-// }
 
 function game() {
+
     // function to disable the buttons
     function disableButtons() {
         buttons.forEach(elem => {
@@ -69,30 +65,14 @@ function game() {
 
     let playerScore = 0;
     let compScore = 0;
-    const score = document.querySelector('.score');
-    const show_winner = document.querySelector(".winner");
-    // score.textContent = ("Player: ")//+ playerScore + " PC: " + compScore;
 
-    // const rock_btn = document.querySelector('#rock_btn');
-    // const paper_btn = document.querySelector('#paper_btn');
-    // const scissors_btn = document.querySelector('#scissors_btn');
+    const score = document.querySelector('.score'); //reference to show current score
+    const show_winner = document.querySelector(".winner"); // reference to show winner at the end
+    const buttons = document.querySelectorAll('button'); // reference to buttons
 
-    // rock_btn.addEventListener('click', () => {
-    //     alert(playRound("rock", getComputerChoice()))
-    // })
-    // paper_btn.addEventListener('click', () => {
-    //     alert("Paper!")
-    // })
-    // scissors_btn.addEventListener('click', () => {
-    //     alert("Paper!")
-    // })
-
-    const buttons = document.querySelectorAll('button');
-    // while (playerScore < 5 & compScore < 5) {
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             let round = playRound(button.id, getComputerChoice())
-            // alert("clicked: " + button.id)
 
             if (round == 0) {
                 compScore++;
@@ -100,6 +80,7 @@ function game() {
                 playerScore++;
             }
             score.textContent = ("Player: " + playerScore + " PC: " + compScore);
+
             // Check for a winner
             if (playerScore >= 5 || compScore >= 5) {
                 disableButtons()
@@ -118,20 +99,6 @@ function game() {
     });
 
 
-
-
-
-
-    // for (let i = 0; i < 5; i++) {
-    //     let playerSelection = prompt("Choose: Rock, Paper, or scissors!")
-    //     let round = playRound(playerSelection, getComputerChoice())
-    //     if (round == 0) {
-    //         compScore++;
-    //     } else if (round == 1) {
-    //         playerScore++;
-    //     }
-    // }
-    // console.log("Final score: Player : " + playerScore + ", Computer : " + compScore)
 }
 
 // add event listener to the r/p/s buttons

@@ -1,3 +1,13 @@
+body {
+    background-image: url(stardew-background.png);
+    background-size: cover;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .wrapper {
     display: flex;
     justify-content: center;
@@ -5,11 +15,36 @@
 }
 
 #rock {
-    background-image: url(https://img.freepik.com/free-vector/colourful-illustration-programmer-working_23-2148281410.jpg?size=626&ext=jpg);
-    width: 500px;
-    height: 500px;
+    background-image: url(https://stardewvalleywiki.com/mediawiki/images/6/60/SlimeMale.jpg);
+    width: 100px;
+    height: 100px;
     border: none;
     color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+}
+
+#paper {
+    background-image: url(austin-stardew.png);
+    width: 100px;
+    height: 100px;
+    border: none;
+    color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
+}
+
+#scissors {
+    background-image: url(anya-stardew.png);
+    width: 100px;
+    height: 100px;
+    border: none;
+    color: transparent;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10px;
 }
 
 #rock:hover {
