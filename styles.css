@@ -1,0 +1,17 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#rock {
+    background-image: url(https://img.freepik.com/free-vector/colourful-illustration-programmer-working_23-2148281410.jpg?size=626&ext=jpg);
+    width: 500px;
+    height: 500px;
+    border: none;
+    color: transparent;
+}
+
+#rock:hover {
+    border: 3px;
+}
